@@ -14,6 +14,9 @@ public class EjercicioUno {
 		double grados = sc.nextDouble();
 		double fahrenheit = grados * 1.8 + 32;
 		System.out.println(grados + " grados celsius son " + fahrenheit + " grados fahrenheit");
+	
+		sc.close();
+		
 	}
 
 }
