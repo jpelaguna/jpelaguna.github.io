@@ -16,12 +16,37 @@ public class Ejercicio02 {
 		System.out.println("Introduzca el mes");
 		int mes = sc.nextInt();
 		System.out.println("Introduzca el año");
-		int anio = sc.nextInt();
+		int anyo = sc.nextInt();
 		
-		if (anio >= 0)
-			if (mes >= 1 && mes <= 12)
-				if (dia >=1 && <= 30)
+		boolean fechaCorrecta = false;
 		
+		if (anyo >= 0) {
+			boolean esBisiesto = ((anyo % 4 == 0 && anyo % 100 !=0) || (anyo % 400 == 0));
+			if (mes >=1 && mes <= 12) {
+				switch (mes) {
+				case 2:
+					if (dia >=1 && dia <= 29 && esBisiesto)
+						fechaCorrecta = true;
+					else if (dia >=1 && dia <= 28 && !esBisiesto)
+						fechaCorrecta = true;
+					break;
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					if (dia >= 1 && dia <= 31)
+						fechaCorrecta = true;
+					break;
+					
+				default:
+					break;
+				}
+			}
 	}
-
+	
+	if (fechaCorrecta)System.out.println("Fecha correcta:" + );
+}
 }
